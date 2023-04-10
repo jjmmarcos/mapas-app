@@ -13,11 +13,7 @@ export class DirectionsApiClient extends HttpClient {
         super(handler);
     }
 
-    public override get<T>(url: string, options: {
-        params?: HttpParams | {
-            [param: string]: string | number | boolean | ReadonlyArray<string | number | boolean>;
-        };
-    }) {
+    public override get<T>(url: string) {
         url = this.baseUrl + url;
         return super.get<T>(url, {
             params: {
